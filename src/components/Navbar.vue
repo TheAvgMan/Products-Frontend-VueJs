@@ -25,9 +25,6 @@ const isActiveLink = (routePath) => {
                         <RouterLink :class="['nav-link', isActiveLink('/create-product') ? 'active' : '']"
                             to="/create-product">Create Product</RouterLink>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
                 </ul>
             </div>
         </div>
