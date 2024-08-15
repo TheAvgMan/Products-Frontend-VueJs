@@ -1,9 +1,18 @@
 <script setup>
 import { defineProps } from 'vue';
+import axios from 'axios';
 
 defineProps({
     product: Object
 });
+
+const deleteProduct = (productID) => {
+    try {
+        axios.delete('http://localhost:8080/api/products/' + productID);
+    } catch (error) {
+        console.error('Error fetching products data', error);
+    }
+}
 </script>
 
 <template>
@@ -18,7 +27,7 @@ defineProps({
                     <p class="card-text">{{ product.description }}</p>
                     <RouterLink to="/create-update-product" class="btn"
                         style="background-color: #ccd5ae; margin-right: 40px;">Update</RouterLink>
-                    <a href="#" class="btn" style="background-color: #ccd5ae;">Delete</a>
+                    <a @click="deleteProduct(product.id)" class="btn" style="background-color: #ccd5ae;">Delete</a>
                 </div>
             </div>
         </div>
