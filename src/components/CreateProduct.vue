@@ -13,7 +13,7 @@ const addProduct = () => {
 </script>
 
 <template>
-    <h1 style="text-align: center;">Create Product</h1>
+    <h1 style="text-align: center;">Create / Update Product</h1>
 
     <form @submit.prevent="addProduct" class="row g-3" style="max-width: 60%; margin: 0 auto;">
         <div class="col-md-6">
@@ -33,7 +33,7 @@ const addProduct = () => {
             <input type="text" class="form-control" id="imageLink" v-model="productImage">
         </div>
         <div class="col-12" style="text-align: center;">
-            <button type="submit" class="btn btn-primary">Create Product</button>
+            <button type="submit" class="btn btn-primary">Create / Update Product</button>
         </div>
     </form>
 </template>

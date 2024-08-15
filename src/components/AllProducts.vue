@@ -1,9 +1,18 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import ProductCard from './ProductCard.vue';
-import productsData from '@/dummyProducts.json';
 
-const products = ref(productsData);
+const products = ref([]);
+
+onMounted(async () => {
+    try {
+        const response = await axios.get('http://localhost:8080/api/products');
+        products.value = response.data;
+    } catch (error) {
+        console.error('Error fetching products data', error);
+    }
+});
 </script>
 
 <template>

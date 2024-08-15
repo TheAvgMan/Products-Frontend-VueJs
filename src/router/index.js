@@ -11,8 +11,8 @@ const router = createRouter({
             component: AllProducts
         },
         {
-            path: '/create-product',
-            name: 'create-product',
+            path: '/create-update-product',
+            name: 'create-update-product',
             component: CreateProduct
         }
     ]
