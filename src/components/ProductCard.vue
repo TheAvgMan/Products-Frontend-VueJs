@@ -25,8 +25,8 @@ const deleteProduct = (productID) => {
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description }}</p>
-                    <RouterLink to="/create-update-product" class="btn"
-                        style="background-color: #ccd5ae; margin-right: 40px;">Update</RouterLink>
+                    <RouterLink to="/" class="btn" style="background-color: #ccd5ae; margin-right: 40px;">Update
+                    </RouterLink>
                     <a @click="deleteProduct(product.id)" class="btn" style="background-color: #ccd5ae;">Delete</a>
                 </div>
             </div>
