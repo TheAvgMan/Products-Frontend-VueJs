@@ -1,12 +1,15 @@
 <script setup>
 import axios from 'axios';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
 
 const productName = ref('');
 const productPrice = ref(1);
 const productDescription = ref('');
 const productImage = ref('');
+
+const router = useRouter();
 
 const createProduct = () => {
     axios.post('http://localhost:8080/api/products', {
@@ -15,6 +18,8 @@ const createProduct = () => {
         price: productPrice.value,
         image: productImage.value
     });
+
+    router.push({ name: 'all-products' });
 };
 </script>
 
