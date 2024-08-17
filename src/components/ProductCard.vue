@@ -1,6 +1,7 @@
 <script setup>
 import { defineProps } from 'vue';
 import axios from 'axios';
+import { RouterLink } from 'vue-router';
 
 defineProps({
     product: Object
@@ -25,7 +26,9 @@ const deleteProduct = (productID) => {
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description }}</p>
-                    <RouterLink to="/" class="btn" style="background-color: #ccd5ae; margin-right: 40px;">Update
+                    <RouterLink :to="`/update-product/${product.id}`" class="btn"
+                        style="background-color: #ccd5ae; margin-right: 40px;">
+                        Update
                     </RouterLink>
                     <a @click="deleteProduct(product.id)" class="btn" style="background-color: #ccd5ae;">Delete</a>
                 </div>
